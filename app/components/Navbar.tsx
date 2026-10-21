@@ -6,7 +6,7 @@ import { Scale } from 'lucide-react';
 
 export default function Navbar() {
   const pathname = usePathname();
-  const linkColor = (href) => pathname === href ? '#E8622A' : '#1B2B5E';
+  const linkColor = (href: string) => pathname === href ? '#E8622A' : '#1B2B5E';
 
   return (
     <nav className="bg-white shadow-sm sticky top-0 z-50">
@@ -17,7 +17,7 @@ export default function Navbar() {
             <span className="text-2xl font-extrabold" style={{ color: '#1B2B5E' }}>GH Trial</span>
           </Link>
           <div className="hidden md:flex items-center space-x-1">
-            {[['/', 'Home'], ['/about', 'Why Us?'], ['/contact', 'Contact'], ['/privacy', 'Privacy'], ['/terms', 'Terms']].map(([href, label]) => (
+            {([['/', 'Home'], ['/about', 'Why Us?'], ['/contact', 'Contact'], ['/privacy', 'Privacy'], ['/terms', 'Terms']] as [string, string][]).map(([href, label]) => (
               <Link key={href} href={href} style={{ color: linkColor(href) }} className="hover:opacity-80 px-4 py-2 rounded-md text-sm font-medium">
                 {label}
               </Link>

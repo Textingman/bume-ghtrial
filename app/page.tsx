@@ -1,48 +1,83 @@
 import Link from 'next/link';
-import { Scale, Users, Shield, CheckCircle, Star, Award, Clock } from 'lucide-react';
+import { Scale, Users, Shield, CheckCircle, FileText, Home, Heart, Briefcase, BookOpen, CreditCard } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen" style={{ backgroundColor: '#F8F5F1', fontFamily: 'Inter, sans-serif' }}>
       <Navbar />
 
-      {/* Alert Banner */}
-      <div className="bg-[#1B2B5E] text-white text-center py-3 px-4 text-sm">
-        <span className="font-medium">Legal protection for every employee — </span>
-        <Link href="/signup" className="underline hover:no-underline font-semibold">Request a Proposal »</Link>
-      </div>
+      {/* ── HERO ── */}
+      <section className="relative overflow-hidden" style={{ backgroundColor: '#F8F5F1' }}>
+        {/* Protective arch background */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full border-2 opacity-10" style={{ borderColor: '#1C2E5B' }} />
+          <div className="absolute -top-16 -right-16 w-[480px] h-[480px] rounded-full border-2 opacity-8" style={{ borderColor: '#1C2E5B' }} />
+          <div className="absolute top-0 right-0 w-[360px] h-[360px] rounded-full border opacity-5" style={{ borderColor: '#E9632B' }} />
+        </div>
 
-      {/* Hero Section — Split Layout */}
-      <section className="relative overflow-hidden" style={{ backgroundColor: '#FFF7F4' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left: Text Card */}
-            <div className="rounded-2xl p-10 text-white" style={{ backgroundColor: '#E8622A' }}>
-              <h1 className="text-4xl lg:text-5xl font-extrabold leading-tight mb-6">
-                Legal Protection for Employees.<br />
-                Better Outcomes for Employers.
+        <div className="relative max-w-6xl mx-auto px-6 lg:px-12 py-24 lg:py-32">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left: Text */}
+            <div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-8" style={{ backgroundColor: '#DCE8E2', color: '#1C2E5B', fontFamily: 'Inter, sans-serif' }}>
+                <Shield className="w-4 h-4" style={{ color: '#E9632B' }} />
+                Employee Legal Benefits
+              </div>
+              <h1 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 800, fontSize: 'clamp(2.5rem, 5vw, 3.75rem)', lineHeight: 1.1, color: '#1C2E5B', marginBottom: '1.25rem' }}>
+                Legal protection for every employee.
               </h1>
-              <p className="text-lg mb-4 opacity-90">
-                Two out of three employees face a legal issue each year, yet few seek representation due to cost.
+              <p style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 600, fontSize: 'clamp(1.25rem, 2.5vw, 1.75rem)', color: '#E9632B', marginBottom: '1.5rem', lineHeight: 1.2 }}>
+                Better outcomes for employers.
               </p>
-              <p className="text-lg mb-8 opacity-90">
-                GH Trial removes cost barriers, reduces legal stress, and helps employers manage rising healthcare costs.
+              <p style={{ fontSize: '1.1rem', lineHeight: 1.7, color: '#26334A', marginBottom: '2.5rem', maxWidth: '480px' }}>
+                Give your team access to affordable legal support for life&apos;s everyday challenges. A valuable employee benefit designed to provide peace of mind.
               </p>
-              <Link href="/signup" className="inline-block bg-white font-bold px-8 py-4 rounded-lg text-lg transition-opacity hover:opacity-90" style={{ color: '#E8622A' }}>
-                Request a Proposal
-              </Link>
+              <div className="flex flex-wrap gap-4">
+                <Link
+                  href="/signup"
+                  className="px-7 py-3.5 rounded-xl text-white font-semibold transition-opacity hover:opacity-90"
+                  style={{ backgroundColor: '#E9632B', fontFamily: 'Inter, sans-serif', fontSize: '1rem' }}
+                >
+                  Request a Proposal
+                </Link>
+                <Link
+                  href="/about"
+                  className="px-7 py-3.5 rounded-xl font-semibold transition-colors hover:bg-white"
+                  style={{ border: '2px solid #1C2E5B', color: '#1C2E5B', fontFamily: 'Inter, sans-serif', fontSize: '1rem' }}
+                >
+                  Explore Benefits
+                </Link>
+              </div>
             </div>
-            {/* Right: Visual */}
-            <div className="relative">
-              <div className="rounded-2xl overflow-hidden bg-gradient-to-br from-orange-100 to-orange-50 p-12 flex items-center justify-center" style={{ minHeight: '400px' }}>
-                <div className="text-center">
-                  <div className="w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6" style={{ backgroundColor: '#E8622A' }}>
-                    <Scale className="w-12 h-12 text-white" />
+
+            {/* Right: Shield composition */}
+            <div className="flex justify-center lg:justify-end">
+              <div className="relative">
+                {/* Outer arch rings */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-80 h-80 rounded-full border-2 opacity-15" style={{ borderColor: '#1C2E5B' }} />
+                </div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-64 h-64 rounded-full border opacity-10" style={{ borderColor: '#E9632B' }} />
+                </div>
+                {/* Center shield */}
+                <div className="relative w-72 h-72 flex items-center justify-center">
+                  <div className="w-48 h-48 rounded-3xl flex items-center justify-center shadow-xl" style={{ backgroundColor: '#1C2E5B' }}>
+                    <svg width="80" height="90" viewBox="0 0 36 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M18 0L0 7V20C0 30.5 7.8 40 18 40C28.2 40 36 30.5 36 20V7L18 0Z" fill="white" opacity="0.15"/>
+                      <path d="M18 4L4 10V20C4 28.5 10.4 36.5 18 38C25.6 36.5 32 28.5 32 20V10L18 4Z" fill="white" opacity="0.1"/>
+                      <text x="18" y="26" textAnchor="middle" fill="white" fontSize="13" fontWeight="700" fontFamily="Manrope, sans-serif">GH</text>
+                    </svg>
                   </div>
-                  <p className="text-2xl font-bold" style={{ color: '#1B2B5E' }}>Legal Coverage</p>
-                  <p className="text-lg mt-2" style={{ color: '#6B7280' }}>For Every Employee</p>
+                  {/* Floating badges */}
+                  <div className="absolute -top-4 -right-4 bg-white rounded-xl px-3 py-2 shadow-md text-xs font-semibold" style={{ color: '#1C2E5B', fontFamily: 'Inter, sans-serif' }}>
+                    ✓ Legal Coverage
+                  </div>
+                  <div className="absolute -bottom-4 -left-4 bg-white rounded-xl px-3 py-2 shadow-md text-xs font-semibold" style={{ color: '#E9632B', fontFamily: 'Inter, sans-serif' }}>
+                    ✓ Peace of Mind
+                  </div>
                 </div>
               </div>
             </div>
@@ -50,146 +85,177 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Stats Bar */}
-      <section className="py-12 border-y" style={{ backgroundColor: '#FFFFFF', borderColor: '#E5E7EB' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {[
-              { value: '13M+', label: 'Members Served' },
-              { value: '22K+', label: 'Network Attorneys' },
-              { value: '50+', label: 'Years of Dedication' },
-              { value: '4.8★', label: 'Member Satisfaction' },
-            ].map((stat) => (
-              <div key={stat.label}>
-                <div className="text-4xl font-extrabold mb-1" style={{ color: '#E8622A' }}>{stat.value}</div>
-                <div className="text-sm font-medium" style={{ color: '#6B7280' }}>{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Employers Choose GH Trial */}
-      <section className="py-20" style={{ backgroundColor: '#FFFFFF' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* ── WHY LEGAL BENEFITS MATTER ── */}
+      <section className="py-24" style={{ backgroundColor: '#FFFFFF' }}>
+        <div className="max-w-6xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4" style={{ color: '#1B2B5E' }}>
-              Employers Who Care Choose GH Trial.
+            <h2 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: 'clamp(2rem, 4vw, 2.75rem)', color: '#1C2E5B', marginBottom: '1rem' }}>
+              Why legal benefits matter
             </h2>
-            <p className="text-xl max-w-3xl mx-auto" style={{ color: '#6B7280' }}>
-              A legal solution that supports employees while strengthening retention and long-term client relationships.
+            <p style={{ fontSize: '1.1rem', color: '#26334A', maxWidth: '560px', margin: '0 auto', lineHeight: 1.7 }}>
+              Employees face legal challenges every day — and most don&apos;t have access to affordable help.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                icon: Shield,
-                title: 'Comprehensive Coverage, Simple Administration',
-                desc: 'Full legal coverage for employees and their families — wills, traffic, family law, and more. Easy to administer, easy to use.',
-              },
-              {
                 icon: Users,
-                title: 'Boost Retention & Reduce Stress',
-                desc: 'Employees with legal protection are less stressed and more productive. Legal issues are the #1 cause of workplace distraction.',
+                headline: 'Most employees face legal issues',
+                body: 'Everyday legal matters — from landlord disputes to family law — affect employees across all income levels, yet many go unresolved due to cost.',
               },
               {
-                icon: Award,
-                title: 'Trusted by Leading Employers',
-                desc: 'Over 50 years of experience serving millions of members. GH Trial is the legal benefit employers trust most.',
+                icon: Briefcase,
+                headline: 'Workplace productivity suffers',
+                body: 'Unresolved legal stress is a leading cause of employee distraction, absenteeism, and reduced performance at work.',
               },
-            ].map((feature) => (
-              <div key={feature.title} className="p-8 rounded-xl border hover:shadow-lg transition-shadow" style={{ borderColor: '#E5E7EB' }}>
-                <div className="w-14 h-14 rounded-full flex items-center justify-center mb-6" style={{ backgroundColor: '#FDEBD0' }}>
-                  <feature.icon className="w-7 h-7" style={{ color: '#E8622A' }} />
+              {
+                icon: Shield,
+                headline: 'Benefits that make a difference',
+                body: 'Legal benefits are among the most valued employee perks — yet remain underutilized in most benefits packages.',
+              },
+            ].map((card) => (
+              <div key={card.headline} className="p-8 rounded-2xl border" style={{ borderColor: '#E8E4DF', backgroundColor: '#FFFFFF' }}>
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ backgroundColor: '#DCE8E2' }}>
+                  <card.icon className="w-6 h-6" style={{ color: '#1C2E5B', strokeWidth: 1.75 }} />
                 </div>
-                <h3 className="text-xl font-bold mb-3" style={{ color: '#1B2B5E' }}>{feature.title}</h3>
-                <p style={{ color: '#6B7280' }}>{feature.desc}</p>
+                <h3 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: '1.15rem', color: '#1C2E5B', marginBottom: '0.75rem' }}>
+                  {card.headline}
+                </h3>
+                <p style={{ fontSize: '0.95rem', color: '#26334A', lineHeight: 1.7 }}>{card.body}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* What's Covered */}
-      <section className="py-20" style={{ backgroundColor: '#FFF7F4' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* ── EVERYDAY LEGAL SUPPORT ── */}
+      <section className="py-24" style={{ backgroundColor: '#F8F5F1' }}>
+        <div className="max-w-6xl mx-auto px-6 lg:px-12">
+          <div className="text-center mb-16">
+            <h2 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: 'clamp(2rem, 4vw, 2.75rem)', color: '#1C2E5B', marginBottom: '1rem' }}>
+              Everyday legal support
+            </h2>
+            <p style={{ fontSize: '1.1rem', color: '#26334A', maxWidth: '520px', margin: '0 auto', lineHeight: 1.7 }}>
+              GH Trial helps employees navigate the legal matters that come up in everyday life.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {[
+              { icon: Heart, title: 'Family & personal matters', desc: 'Divorce, custody, adoption, and family legal guidance.' },
+              { icon: Home, title: 'Housing & property', desc: 'Landlord disputes, lease reviews, and real estate transactions.' },
+              { icon: FileText, title: 'Estate planning', desc: 'Wills, trusts, powers of attorney, and advance directives.' },
+              { icon: CreditCard, title: 'Consumer protection', desc: 'Debt issues, identity theft, and consumer rights.' },
+              { icon: BookOpen, title: 'Legal consultations', desc: 'Access to legal advice for a wide range of personal matters.' },
+              { icon: Scale, title: 'Document assistance', desc: 'Review and preparation of legal documents and contracts.' },
+            ].map((item) => (
+              <div key={item.title} className="flex items-start gap-4 p-6 rounded-2xl bg-white border" style={{ borderColor: '#E8E4DF' }}>
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: '#F8F5F1' }}>
+                  <item.icon className="w-5 h-5" style={{ color: '#1C2E5B', strokeWidth: 1.75 }} />
+                </div>
+                <div>
+                  <h3 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: '0.95rem', color: '#1C2E5B', marginBottom: '0.35rem' }}>
+                    {item.title}
+                  </h3>
+                  <p style={{ fontSize: '0.875rem', color: '#26334A', lineHeight: 1.6 }}>{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── HOW IT WORKS ── */}
+      <section className="py-24" style={{ backgroundColor: '#FFFFFF' }}>
+        <div className="max-w-6xl mx-auto px-6 lg:px-12">
+          <div className="text-center mb-16">
+            <h2 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: 'clamp(2rem, 4vw, 2.75rem)', color: '#1C2E5B', marginBottom: '1rem' }}>
+              How it works
+            </h2>
+            <p style={{ fontSize: '1.1rem', color: '#26334A', maxWidth: '480px', margin: '0 auto', lineHeight: 1.7 }}>
+              Simple for employers to offer. Easy for employees to use.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8 relative">
+            {/* Connecting line */}
+            <div className="hidden md:block absolute top-10 left-1/4 right-1/4 h-px" style={{ backgroundColor: '#DCE8E2' }} />
+            {[
+              { num: '01', title: 'Employers offer GH Trial', desc: 'Add GH Trial to your employee benefits package. Simple setup, no IT required.' },
+              { num: '02', title: 'Employees access their benefit', desc: 'Employees receive their unique access credentials and activate their legal benefit.' },
+              { num: '03', title: 'Connect with legal support', desc: 'Employees connect with available legal support for their specific situation.' },
+            ].map((step) => (
+              <div key={step.num} className="text-center relative">
+                <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold" style={{ backgroundColor: '#1C2E5B', color: 'white', fontFamily: 'Manrope, sans-serif' }}>
+                  {step.num}
+                </div>
+                <h3 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: '1.1rem', color: '#1C2E5B', marginBottom: '0.75rem' }}>
+                  {step.title}
+                </h3>
+                <p style={{ fontSize: '0.95rem', color: '#26334A', lineHeight: 1.7 }}>{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── BENEFITS FOR EMPLOYERS ── */}
+      <section className="py-24" style={{ backgroundColor: '#1C2E5B' }}>
+        <div className="max-w-6xl mx-auto px-6 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-4xl font-bold mb-6" style={{ color: '#1B2B5E' }}>What's Covered</h2>
-              <p className="text-lg mb-8" style={{ color: '#6B7280' }}>
-                GH Trial provides comprehensive legal coverage for the issues employees face every day.
+              <h2 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: 'clamp(2rem, 4vw, 2.75rem)', color: 'white', marginBottom: '1.25rem' }}>
+                Built for employers who care.
+              </h2>
+              <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.7, marginBottom: '2.5rem' }}>
+                GH Trial is a voluntary employee benefit that&apos;s simple to administer and meaningful to employees. Add it to your benefits package and give your team the protection they deserve.
               </p>
-              <div className="space-y-4">
-                {[
-                  'Wills, Trusts & Estate Planning',
-                  'Traffic Violations & License Issues',
-                  'Family Law & Divorce',
-                  'Real Estate Transactions',
-                  'Identity Theft Protection',
-                  'Consumer Protection & Debt Issues',
-                  'Immigration Assistance',
-                  'Civil Lawsuits & Defense',
-                ].map((item) => (
-                  <div key={item} className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 flex-shrink-0" style={{ color: '#E8622A' }} />
-                    <span className="font-medium" style={{ color: '#374151' }}>{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="rounded-2xl p-10" style={{ backgroundColor: '#1B2B5E' }}>
-              <h3 className="text-2xl font-bold text-white mb-6">Ready to Protect Your Team?</h3>
-              <p className="text-lg mb-8" style={{ color: '#CBD5E1' }}>
-                Join thousands of employers who trust GH Trial to protect their most valuable asset — their people.
-              </p>
-              <div className="space-y-4 mb-8">
-                {['No cost to employees', 'Easy payroll deduction', 'Immediate coverage', 'No waiting periods'].map((item) => (
-                  <div key={item} className="flex items-center gap-3">
-                    <Star className="w-4 h-4" style={{ color: '#E8622A' }} />
-                    <span className="text-white font-medium">{item}</span>
-                  </div>
-                ))}
-              </div>
-              <Link href="/signup" className="inline-block w-full text-center font-bold px-8 py-4 rounded-lg text-lg transition-opacity hover:opacity-90" style={{ backgroundColor: '#E8622A', color: '#FFFFFF' }}>
+              <Link
+                href="/signup"
+                className="inline-block px-7 py-3.5 rounded-xl font-semibold text-white transition-opacity hover:opacity-90"
+                style={{ backgroundColor: '#E9632B', fontFamily: 'Inter, sans-serif', fontSize: '1rem' }}
+              >
                 Request a Proposal
               </Link>
             </div>
+            <div className="space-y-5">
+              {[
+                { title: 'Competitive employee benefits', desc: 'Stand out as an employer of choice with a benefit employees genuinely value.' },
+                { title: 'Better access to legal support', desc: 'Remove cost barriers so employees can address legal matters without delay.' },
+                { title: 'Reduced employee financial stress', desc: 'Legal issues are a leading source of financial anxiety. Help your team find peace of mind.' },
+                { title: 'Simple benefit administration', desc: 'Easy to set up, easy to manage. Employees self-enroll using their unique ID.' },
+              ].map((item) => (
+                <div key={item.title} className="flex items-start gap-4 p-5 rounded-2xl" style={{ backgroundColor: 'rgba(255,255,255,0.07)' }}>
+                  <CheckCircle className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: '#E9632B' }} />
+                  <div>
+                    <p style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: '0.95rem', color: 'white', marginBottom: '0.25rem' }}>{item.title}</p>
+                    <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6 }}>{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-20" style={{ backgroundColor: '#FFFFFF' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-center mb-12" style={{ color: '#1B2B5E' }}>What Employers Say</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { quote: 'GH Trial has been a game-changer for our employee benefits package. Our team loves it.', name: 'Sarah M.', title: 'HR Director, TechCorp' },
-              { quote: 'We saw a 30% reduction in employee stress-related absences after adding GH Trial.', name: 'James R.', title: 'VP People, MidWest Manufacturing' },
-              { quote: 'The easiest benefit to administer. Employees sign up themselves and love the coverage.', name: 'Linda K.', title: 'Benefits Manager, RetailCo' },
-            ].map((t) => (
-              <div key={t.name} className="p-8 rounded-xl border" style={{ borderColor: '#E5E7EB' }}>
-                <div className="flex mb-4">
-                  {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4" style={{ color: '#E8622A' }} fill="#E8622A" />)}
-                </div>
-                <p className="text-lg mb-6 italic" style={{ color: '#374151' }}>"{t.quote}"</p>
-                <div>
-                  <p className="font-bold" style={{ color: '#1B2B5E' }}>{t.name}</p>
-                  <p className="text-sm" style={{ color: '#6B7280' }}>{t.title}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+      {/* ── FINAL CTA ── */}
+      <section className="relative py-24 overflow-hidden" style={{ backgroundColor: '#F8F5F1' }}>
+        {/* Subtle arch decoration */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute -bottom-24 -left-24 w-96 h-96 rounded-full border-2 opacity-10" style={{ borderColor: '#1C2E5B' }} />
+          <div className="absolute -bottom-12 -left-12 w-72 h-72 rounded-full border opacity-8" style={{ borderColor: '#E9632B' }} />
         </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-20" style={{ backgroundColor: '#E8622A' }}>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">Ready to Get Started?</h2>
-          <p className="text-xl mb-10 opacity-90 text-white">Join thousands of employers who trust GH Trial to protect their employees.</p>
-          <Link href="/signup" className="inline-block bg-white font-bold px-10 py-5 rounded-lg text-xl transition-opacity hover:opacity-90" style={{ color: '#E8622A' }}>
-            Request a Proposal — Free
+        <div className="relative max-w-3xl mx-auto px-6 lg:px-12 text-center">
+          <h2 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 800, fontSize: 'clamp(2rem, 4vw, 2.75rem)', color: '#1C2E5B', marginBottom: '1.25rem' }}>
+            Give your employees the protection they deserve.
+          </h2>
+          <p style={{ fontSize: '1.1rem', color: '#26334A', lineHeight: 1.7, marginBottom: '2.5rem' }}>
+            Discover how GH Trial can complement your employee benefits package.
+          </p>
+          <Link
+            href="/signup"
+            className="inline-block px-8 py-4 rounded-xl font-semibold text-white text-lg transition-opacity hover:opacity-90"
+            style={{ backgroundColor: '#E9632B', fontFamily: 'Inter, sans-serif' }}
+          >
+            Request a Proposal
           </Link>
         </div>
       </section>

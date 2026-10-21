@@ -1,61 +1,65 @@
 import Link from 'next/link';
-import { Scale, Shield, Users, Award, CheckCircle, Heart } from 'lucide-react';
+import { Shield, Users, CheckCircle, Scale, Heart, Home, FileText, Briefcase } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen" style={{ backgroundColor: '#F8F5F1', fontFamily: 'Inter, sans-serif' }}>
       <Navbar />
 
       {/* Hero */}
-      <section className="py-20" style={{ backgroundColor: '#FFF7F4' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold mb-6" style={{ backgroundColor: '#FDEBD0', color: '#E8622A' }}>
-            <Scale className="w-4 h-4" />
+      <section className="py-24" style={{ backgroundColor: '#F8F5F1' }}>
+        <div className="max-w-6xl mx-auto px-6 lg:px-12 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-8" style={{ backgroundColor: '#DCE8E2', color: '#1C2E5B' }}>
+            <Shield className="w-4 h-4" style={{ color: '#E9632B' }} />
             About GH Trial
           </div>
-          <h1 className="text-5xl font-extrabold mb-6" style={{ color: '#1B2B5E' }}>
-            Legal Protection Shouldn't Be a Luxury.
+          <h1 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 800, fontSize: 'clamp(2.25rem, 5vw, 3.5rem)', color: '#1C2E5B', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+            Legal protection shouldn&apos;t be a luxury.
           </h1>
-          <p className="text-xl max-w-3xl mx-auto" style={{ color: '#6B7280' }}>
-            GH Trial was founded on a simple belief: every employee deserves access to quality legal representation — regardless of their income or employer size.
+          <p style={{ fontSize: '1.15rem', color: '#26334A', maxWidth: '600px', margin: '0 auto', lineHeight: 1.7 }}>
+            GH Trial was founded on a simple belief: every employee deserves access to quality legal support — regardless of their income or employer size.
           </p>
         </div>
       </section>
 
       {/* Mission */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24" style={{ backgroundColor: '#FFFFFF' }}>
+        <div className="max-w-6xl mx-auto px-6 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-4xl font-bold mb-6" style={{ color: '#1B2B5E' }}>Our Mission</h2>
-              <p className="text-lg mb-4" style={{ color: '#6B7280' }}>
-                Two out of three employees face a legal issue each year — from traffic violations and landlord disputes to family law and estate planning. Yet most never seek help because they can't afford it.
+              <h2 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)', color: '#1C2E5B', marginBottom: '1.25rem' }}>
+                Our mission
+              </h2>
+              <p style={{ fontSize: '1rem', color: '#26334A', lineHeight: 1.8, marginBottom: '1.25rem' }}>
+                Everyday legal matters — from landlord disputes and traffic violations to family law and estate planning — affect employees across all income levels. Yet most never seek help because they can&apos;t afford it.
               </p>
-              <p className="text-lg mb-4" style={{ color: '#6B7280' }}>
-                GH Trial partners with employers to offer comprehensive legal benefit plans that give every employee access to a network of 22,000+ attorneys — at no out-of-pocket cost.
+              <p style={{ fontSize: '1rem', color: '#26334A', lineHeight: 1.8, marginBottom: '1.25rem' }}>
+                GH Trial partners with employers to offer legal benefit plans that give every employee access to legal support — at no out-of-pocket cost to them.
               </p>
-              <p className="text-lg" style={{ color: '#6B7280' }}>
-                The result: less stressed employees, better productivity, and stronger retention for employers.
+              <p style={{ fontSize: '1rem', color: '#26334A', lineHeight: 1.8 }}>
+                The result: employees who feel supported, and employers who demonstrate they genuinely care about their team&apos;s wellbeing.
               </p>
             </div>
-            <div className="rounded-2xl p-10" style={{ backgroundColor: '#1B2B5E' }}>
-              <h3 className="text-2xl font-bold text-white mb-8">Why It Matters</h3>
+            <div className="rounded-2xl p-10" style={{ backgroundColor: '#1C2E5B' }}>
+              <h3 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: '1.4rem', color: 'white', marginBottom: '2rem' }}>
+                Why it matters
+              </h3>
               <div className="space-y-6">
                 {[
-                  { icon: Heart, stat: '67%', label: 'of employees face a legal issue each year' },
-                  { icon: Users, stat: '13M+', label: 'members served across the country' },
-                  { icon: Award, stat: '50+', label: 'years of legal benefit expertise' },
-                  { icon: Scale, stat: '22K+', label: 'network attorneys nationwide' },
+                  { icon: Users, stat: 'Most employees', label: 'face at least one legal issue each year' },
+                  { icon: Briefcase, stat: 'Unresolved legal stress', label: 'is a leading cause of workplace distraction' },
+                  { icon: Shield, stat: 'Legal benefits', label: 'are among the most valued employee perks' },
+                  { icon: Scale, stat: 'Cost barriers', label: 'prevent most employees from seeking legal help' },
                 ].map((item) => (
-                  <div key={item.label} className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: '#E8622A' }}>
-                      <item.icon className="w-6 h-6 text-white" />
+                  <div key={item.label} className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: 'rgba(233,99,43,0.2)' }}>
+                      <item.icon className="w-5 h-5" style={{ color: '#E9632B' }} />
                     </div>
                     <div>
-                      <p className="text-2xl font-extrabold" style={{ color: '#E8622A' }}>{item.stat}</p>
-                      <p className="text-sm" style={{ color: '#CBD5E1' }}>{item.label}</p>
+                      <p style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: '0.95rem', color: '#E9632B' }}>{item.stat}</p>
+                      <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.6 }}>{item.label}</p>
                     </div>
                   </div>
                 ))}
@@ -65,20 +69,29 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* What We Cover */}
-      <section className="py-20" style={{ backgroundColor: '#FFF7F4' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-center mb-4" style={{ color: '#1B2B5E' }}>Comprehensive Legal Coverage</h2>
-          <p className="text-xl text-center mb-12" style={{ color: '#6B7280' }}>From everyday legal needs to complex matters — GH Trial has employees covered.</p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {/* Coverage */}
+      <section className="py-24" style={{ backgroundColor: '#F8F5F1' }}>
+        <div className="max-w-6xl mx-auto px-6 lg:px-12">
+          <h2 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)', color: '#1C2E5B', marginBottom: '1rem', textAlign: 'center' }}>
+            Comprehensive legal coverage
+          </h2>
+          <p style={{ fontSize: '1.05rem', color: '#26334A', textAlign: 'center', marginBottom: '3rem', lineHeight: 1.7 }}>
+            From everyday legal needs to more complex matters — GH Trial helps employees navigate life&apos;s legal challenges.
+          </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
-              'Wills & Estate Planning', 'Traffic & License Issues', 'Family Law & Divorce',
-              'Real Estate Transactions', 'Identity Theft Defense', 'Consumer Protection',
-              'Immigration Assistance', 'Civil Lawsuit Defense',
+              'Wills & estate planning',
+              'Traffic & license issues',
+              'Family law & divorce',
+              'Real estate transactions',
+              'Identity theft defense',
+              'Consumer protection',
+              'Immigration assistance',
+              'Civil lawsuit defense',
             ].map((item) => (
-              <div key={item} className="flex items-center gap-3 p-4 bg-white rounded-xl border" style={{ borderColor: '#E5E7EB' }}>
-                <CheckCircle className="w-5 h-5 flex-shrink-0" style={{ color: '#E8622A' }} />
-                <span className="font-medium text-sm" style={{ color: '#374151' }}>{item}</span>
+              <div key={item} className="flex items-center gap-3 p-4 bg-white rounded-xl border" style={{ borderColor: '#E8E4DF' }}>
+                <CheckCircle className="w-4 h-4 flex-shrink-0" style={{ color: '#E9632B' }} />
+                <span style={{ fontSize: '0.9rem', fontWeight: 500, color: '#26334A' }}>{item}</span>
               </div>
             ))}
           </div>
@@ -86,13 +99,19 @@ export default function AboutPage() {
       </section>
 
       {/* For Employers */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-6" style={{ color: '#1B2B5E' }}>Built for Employers Who Care</h2>
-          <p className="text-xl max-w-3xl mx-auto mb-10" style={{ color: '#6B7280' }}>
-            GH Trial is a voluntary employee benefit — simple to administer, zero cost to the employer, and loved by employees. Add it to your benefits package in days, not months.
+      <section className="py-24" style={{ backgroundColor: '#FFFFFF' }}>
+        <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
+          <h2 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)', color: '#1C2E5B', marginBottom: '1.25rem' }}>
+            Built for employers who care
+          </h2>
+          <p style={{ fontSize: '1.05rem', color: '#26334A', lineHeight: 1.7, marginBottom: '2.5rem' }}>
+            GH Trial is a voluntary employee benefit — simple to administer, and meaningful to employees. Add it to your benefits package and give your team the protection they deserve.
           </p>
-          <Link href="/signup" className="inline-block text-white font-bold px-10 py-4 rounded-xl text-lg transition-opacity hover:opacity-90" style={{ backgroundColor: '#E8622A' }}>
+          <Link
+            href="/signup"
+            className="inline-block px-8 py-4 rounded-xl font-semibold text-white text-lg transition-opacity hover:opacity-90"
+            style={{ backgroundColor: '#E9632B', fontFamily: 'Inter, sans-serif' }}
+          >
             Request a Proposal
           </Link>
         </div>

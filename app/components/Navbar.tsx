@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
@@ -21,18 +22,16 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 bg-white border-b" style={{ borderColor: '#E8E4DF' }}>
       <div className="max-w-6xl mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
+          {/* Logo — uses the actual uploaded PNG */}
           <Link href="/" className="flex items-center gap-3">
-            {/* Shield SVG logo (inline fallback if image not loaded) */}
-            <svg width="36" height="40" viewBox="0 0 36 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M18 0L0 7V20C0 30.5 7.8 40 18 40C28.2 40 36 30.5 36 20V7L18 0Z" fill="#1C2E5B"/>
-              <path d="M18 4L4 10V20C4 28.5 10.4 36.5 18 38C25.6 36.5 32 28.5 32 20V10L18 4Z" fill="#1C2E5B"/>
-              <path d="M18 8L8 13V20C8 26.5 12.5 32.5 18 34.5C23.5 32.5 28 26.5 28 20V13L18 8Z" fill="#E9632B" opacity="0.3"/>
-              <text x="18" y="26" textAnchor="middle" fill="white" fontSize="13" fontWeight="700" fontFamily="Manrope, sans-serif">GH</text>
-            </svg>
-            <span style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: '1.2rem', color: '#1C2E5B', letterSpacing: '-0.02em' }}>
-              GH Trial
-            </span>
+            <Image
+              src="/logo.png"
+              alt="GH Trial"
+              width={120}
+              height={40}
+              className="h-10 w-auto object-contain"
+              priority
+            />
           </Link>
 
           {/* Desktop Nav */}

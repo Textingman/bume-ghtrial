@@ -1,20 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "GH Trial - GH Trial - Legal Protection for Employees & Employers",
-  description: "GH Trial provides affordable legal protection for employees and better outcomes for employers. Remove cost barriers and reduce legal stress today.",
+  title: "GH Trial — Legal Protection for Employees",
+  description: "Give your team access to affordable legal support for life's everyday challenges. A valuable employee benefit designed to provide peace of mind.",
+  icons: {
+    icon: '/favicon.png',
+  },
 };
 
 export default function RootLayout({
@@ -24,9 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

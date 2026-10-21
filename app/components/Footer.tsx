@@ -1,18 +1,22 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
     <footer style={{ backgroundColor: '#1C2E5B', color: '#FFFFFF' }}>
       <div className="max-w-6xl mx-auto px-6 lg:px-12 py-16">
         <div className="grid md:grid-cols-4 gap-10 mb-12">
-          {/* Brand */}
+          {/* Brand — uses the actual uploaded PNG logo (inverted for dark bg) */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-3 mb-5">
-              <svg width="32" height="36" viewBox="0 0 36 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18 0L0 7V20C0 30.5 7.8 40 18 40C28.2 40 36 30.5 36 20V7L18 0Z" fill="white" opacity="0.9"/>
-                <text x="18" y="26" textAnchor="middle" fill="#1C2E5B" fontSize="13" fontWeight="700" fontFamily="Manrope, sans-serif">GH</text>
-              </svg>
-              <span style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: '1.1rem', color: 'white' }}>GH Trial</span>
+            <div className="mb-5">
+              <Image
+                src="/logo.png"
+                alt="GH Trial"
+                width={130}
+                height={44}
+                className="h-11 w-auto object-contain"
+                style={{ filter: 'brightness(0) invert(1)', opacity: 0.9 }}
+              />
             </div>
             <p style={{ color: 'rgba(255,255,255,0.65)', fontSize: '0.9rem', lineHeight: 1.7, maxWidth: '280px', fontFamily: 'Inter, sans-serif' }}>
               Legal protection for every employee. Better outcomes for employers.

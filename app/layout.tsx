@@ -6,6 +6,8 @@ export const metadata: Metadata = {
   description: "Give your team access to affordable legal support for life's everyday challenges. A valuable employee benefit designed to provide peace of mind.",
   icons: {
     icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/favicon.png',
   },
 };
 

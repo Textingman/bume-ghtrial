@@ -48,7 +48,7 @@ export default function PrivacyPage() {
           <p className="mb-6" style={{ color: '#6B7280' }}>
             If you have questions about this Privacy Policy, please contact us at:<br />
             GH Trial<br />
-            8 The Green, Ste A, Dover, DE 19901<br />
+            838 Walker Rd Ste 21-2, Dover, DE 19904-2751<br />
             Email: <a href="mailto:support@ghtrial.com" style={{ color: '#E8622A' }}>support@ghtrial.com</a>
           </p>
         </div>

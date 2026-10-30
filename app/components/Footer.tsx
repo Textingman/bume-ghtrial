@@ -23,8 +23,8 @@ export default function Footer() {
             </p>
             <p className="mt-4 text-sm" style={{ color: 'rgba(255,255,255,0.45)', fontFamily: 'Inter, sans-serif' }}>
               support@ghtrial.com<br />
-              8 The Green, Ste A<br />
-              Dover, DE 19901
+              838 Walker Rd Ste 21-2<br />
+              Dover, DE 19904-2751
             </p>
           </div>
 
